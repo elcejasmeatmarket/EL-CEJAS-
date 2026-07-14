@@ -347,6 +347,8 @@ header.top{position:sticky;top:0;z-index:60;background:linear-gradient(var(--ink
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:90;background:linear-gradient(180deg,#1a1518,#120d10);border-radius:24px 24px 0 0;border-top:1px solid var(--line);max-height:92vh;overflow-y:auto;transform:translateY(100%);transition:transform .34s cubic-bezier(.4,0,.2,1);box-shadow:0 -24px 60px rgba(0,0,0,.6)}
 .sheet.open{transform:translateY(0)}
 .sheet .grab{width:44px;height:5px;border-radius:99px;background:var(--panel-3);margin:12px auto 0}
+.sheet-close{position:absolute;top:12px;right:14px;z-index:6;width:38px;height:38px;border-radius:50%;background:var(--panel-2);border:1px solid var(--line);color:var(--bone);display:grid;place-items:center;font-size:18px}
+.sheet-close:active{background:var(--panel-3)}
 .pm-photo{height:200px;margin:14px 16px 0;border-radius:18px;overflow:hidden;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 44%,rgba(224,30,43,.22),var(--panel-2))}
 .pm-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pm-photo .picwrap{width:120px;height:120px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.55))}
@@ -399,6 +401,21 @@ header.top{position:sticky;top:0;z-index:60;background:linear-gradient(var(--ink
 .onote:focus{border-color:var(--red);border-style:solid}
 .onote::placeholder{color:var(--muted-2)}
 .os-total{display:flex;justify-content:space-between;align-items:center;padding:16px;margin-top:6px;border-top:1px solid var(--line);font-size:14px}
+.pickup{margin:14px 0 4px;padding:16px;border-radius:16px;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line)}
+.pickup .pk-h{font-family:'Anton';font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--red-soft);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.pk-seg{display:flex;gap:9px;margin-bottom:12px}
+.pk-seg button{flex:1;padding:12px 10px;border-radius:12px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted);font-weight:700;font-size:13.5px;display:flex;flex-direction:column;align-items:center;gap:3px;transition:.15s}
+.pk-seg button small{font-weight:500;font-size:10.5px;color:var(--muted-2);letter-spacing:.01em}
+.pk-seg button.on{background:var(--red);border-color:var(--red);color:#fff}
+.pk-seg button.on small{color:rgba(255,255,255,.85)}
+.pk-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.pk-field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+.pk-field select{width:100%;padding:12px 12px;border-radius:11px;background:var(--panel-2);border:1px solid var(--line);color:var(--bone);font-size:16px;outline:none;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 16px) 18px,calc(100% - 11px) 18px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.pk-field select:focus{border-color:var(--red)}
+.rc-pickup{font-size:12.5px;color:#1a1416;margin-top:12px;background:rgba(31,122,68,.1);border:1px solid rgba(31,122,68,.35);border-radius:10px;padding:10px 12px;line-height:1.5;font-weight:600}
+.rc-pickup b{color:#1f7a44}
+.rc-payin{margin-top:12px;background:rgba(224,164,28,.12);border:1.5px solid rgba(184,134,11,.5);color:#8a5a10;border-radius:10px;padding:11px 13px;line-height:1.5;font-size:12px;font-weight:700;text-align:center}
+.rc-payin .pt{display:block;font-family:'Anton';font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px;color:#a5720f}
 .os-total .tv{font-family:'Anton';font-size:26px;color:var(--green)}
 .os-empty{text-align:center;padding:50px 20px;color:var(--muted)}
 .os-empty .ico{font-size:40px;opacity:.4;margin-bottom:12px;display:inline-block}
@@ -439,6 +456,10 @@ header.top{position:sticky;top:0;z-index:60;background:linear-gradient(var(--ink
 .admin-btn{width:min(88vw,320px);padding:15px;border-radius:14px;background:var(--red);color:#fff;font-weight:800;font-size:16px;box-shadow:0 12px 26px -8px var(--glow)}
 .admin-btn.ghost{background:transparent;border:1px solid var(--line);color:var(--muted);box-shadow:none;font-weight:600;margin-top:12px}
 .auth-err{color:var(--danger);font-size:13px;font-weight:600;height:18px;margin-bottom:8px}
+.cred-box{width:min(88vw,340px);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px;text-align:left}
+.cred-lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.cred-val{font-family:monospace;font-size:21px;letter-spacing:.14em;color:var(--bone);word-break:break-all;margin-bottom:10px}
+.cred-copy{padding:9px 14px;border-radius:10px;background:var(--panel-3);border:1px solid var(--line);color:var(--bone);font-weight:600;font-size:13px}
 .admin-dash{flex:1;display:none;flex-direction:column;min-height:0}
 .admin-dash.on{display:flex}
 .ad-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
@@ -568,8 +589,8 @@ header.top{position:sticky;top:0;z-index:60;background:linear-gradient(var(--ink
 
 <!-- SHEETS -->
 <div class="scrim" id="scrim"></div>
-<div class="sheet" id="pSheet"><div class="grab"></div><div id="pSheetBody"></div></div>
-<div class="sheet" id="oSheet"><div class="grab"></div><div id="oSheetBody"></div></div>
+<div class="sheet" id="pSheet"><div class="grab"></div><button class="sheet-close" id="pClose" aria-label="close"></button><div id="pSheetBody"></div></div>
+<div class="sheet" id="oSheet"><div class="grab"></div><button class="sheet-close" id="oClose" aria-label="home"></button><div id="oSheetBody"></div></div>
 
 <!-- ADMIN -->
 <div class="admin" id="admin">
@@ -740,6 +761,12 @@ const STR={
  receipt_tag:{en:'Order request',es:'Solicitud de pedido'},
  receipt_fine:{en:'Estimate only — meats are priced by exact weight at pickup. This is a request, not a paid order.',es:'Solo estimado — las carnes se cobran por peso exacto al recoger. Es una solicitud, no un pago.'},
  receipt_how:{en:'Screenshot this and DM it to us on Instagram, or text it to us. We’ll call or DM you when it’s ready!',es:'Toma una captura y envíanosla por DM en Instagram, o mándala por mensaje. ¡Te avisamos por llamada o DM cuando esté listo!'},
+ pickup_when:{en:'Pickup — when & where',es:'Recoger — cuándo y dónde'},
+ loc_shop:{en:'Meat Shop',es:'Carnicería'}, loc_bbq:{en:'BBQ (outdoor)',es:'BBQ (afuera)'},
+ pickup_day:{en:'Day',es:'Día'}, pickup_time:{en:'Time',es:'Hora'},
+ pickup_at:{en:'Pickup',es:'Recoger'},
+ pay_inside_t:{en:'Pay inside first',es:'Paga adentro primero'},
+ pay_inside:{en:'Please come inside the shop to pay first and show this screenshot. Once it’s paid we send it straight to the cooks so it’s made fresh.',es:'Por favor pasa dentro de la tienda a pagar primero y muestra esta captura. Una vez pagado, lo mandamos de inmediato a los cocineros para hacerlo al momento.'},
  share_order:{en:'Share order image',es:'Compartir imagen del pedido'},
  save_image:{en:'Save order image',es:'Guardar imagen'},
  building_img:{en:'Building image…',es:'Creando imagen…'},
@@ -780,8 +807,9 @@ const SEED={
   welcomeEs:'Carnicería familiar en Stockton — res, cerdo, pollo, mariscos y chorizo hecho en casa. Cortado al momento, envuelto a tu gusto.',
   bbqHours:'Thursday – Sunday · 10 AM – 6 PM', bbqHoursEs:'Jueves a Domingo · 10 AM – 6 PM',
   giveaway:{active:true,title:'',titleEs:'',blurb:'',blurbEs:'',btn:'',btnEs:'',url:'',img:null},
-  adminKey:null},
+  adminHash:null,recoveryHash:null,adminKey:null},
  customer:{name:'',phone:'',instagram:''},
+ pickup:{loc:'shop',day:'',time:''},
  order:[],
  products:[
   P(1,'Ribeye Steak','Bistec Ribeye','beef',14.99,'steak','Richly marbled, tender, full of flavor. Jesse’s go-to for a special-occasion steak.','Muy marmoleado, suave y lleno de sabor. El favorito de Jesse para una ocasión especial.',{best:true,pairs:['El Cejas Steak Rub','Garlic butter','Baby potatoes','Red wine']}),
@@ -865,7 +893,31 @@ const CHECKLIST=[
 /* ============ STORAGE (IndexedDB + fallbacks) ============ */
 const DB='elcejas_db', ST='kv', DKEY='data_v3', LS='elcejas_v3', LSADMIN='elcejas_admin_v3', KKEY='key_v3', LSKEY='elcejas_key_v3';
 const mem={};
-let ADMIN_KEY_CACHE=null;
+let ADMIN_KEY_PLAIN=null, RECOVERY_PLAIN=null;
+/* bundled SHA-256 so hashing is identical on every device (works offline too) */
+function sha256(ascii){
+ function rr(v,a){return (v>>>a)|(v<<(32-a));}
+ var mp=Math.pow,mw=mp(2,32),i,j,res='',words=[],bl=ascii.length*8;
+ var h=sha256.h=sha256.h||[],k=sha256.k=sha256.k||[],pc=k.length,ic={};
+ for(var c=2;pc<64;c++){if(!ic[c]){for(i=0;i<313;i+=c){ic[i]=c;}h[pc]=(mp(c,.5)*mw)|0;k[pc++]=(mp(c,1/3)*mw)|0;}}
+ ascii+='\x80';while(ascii.length%64-56)ascii+='\x00';
+ for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return;words[i>>2]|=j<<((3-i)%4)*8;}
+ words[words.length]=((bl/mw)|0);words[words.length]=(bl);
+ for(j=0;j<words.length;){var w=words.slice(j,j+=16),oh=h;h=h.slice(0,8);
+  for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],a=h[0],e=h[4];
+   var t1=h[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&h[5])^((~e)&h[6]))+k[i]+(w[i]=i<16?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
+   var t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&h[1])^(a&h[2])^(h[1]&h[2]));
+   h=[(t1+t2)|0].concat(h);h[4]=(h[4]+t1)|0;}
+  for(i=0;i<8;i++){h[i]=(h[i]+oh[i])|0;}}
+ for(i=0;i<8;i++){for(j=3;j+1;j--){var b=(h[i]>>(j*8))&255;res+=((b<16)?0:'')+b.toString(16);}}
+ return res;
+}
+function hkey(k){return sha256('elcejas\u00A7v4::'+String(k).trim().toUpperCase());}
+function genKey(prefix){
+ const AB='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let out=prefix+'-';
+ const rnd=(n)=>{let s='';const arr=(window.crypto&&crypto.getRandomValues)?crypto.getRandomValues(new Uint32Array(n)):null;for(let i=0;i<n;i++){const v=arr?arr[i]:Math.floor(Math.random()*4294967296);s+=AB[v%AB.length];}return s;};
+ return out+rnd(4)+'-'+rnd(4);
+}
 function jclone(o){return JSON.parse(JSON.stringify(o));}
 function idbOpen(){return new Promise((res,rej)=>{try{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(ST))r.result.createObjectStore(ST);};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);}catch(e){rej(e);}});}
 function idbGet(k){return new Promise(async(res)=>{try{const db=await idbOpen();const t=db.transaction(ST,'readonly').objectStore(ST).get(k);t.onsuccess=()=>res(t.result);t.onerror=()=>res(undefined);}catch(e){res(undefined);}});}
@@ -878,17 +930,26 @@ async function loadData(){
  if(!d&&mem[LS])d=mem[LS];
  if(!d)d=jclone(SEED);
  store.data=d;
- // durable admin-key: once set on this device, it can never be replaced by a new "account"
- let durKey;
- try{durKey=await idbGet(KKEY);}catch(e){}
- if(!durKey){try{durKey=localStorage.getItem(LSKEY)||undefined;}catch(e){}}
- if(!durKey&&mem[LSKEY])durKey=mem[LSKEY];
- if(durKey&&!d.settings) d.settings={};
- if(durKey&&(!d.settings.adminKey))d.settings.adminKey=durKey; // restore lock
- if(d.settings&&d.settings.adminKey){ADMIN_KEY_CACHE=d.settings.adminKey;persistKey(d.settings.adminKey);}
+ if(!d.settings)d.settings={};
+ // durable credentials: hashes lock this device even after a data reset; plains stay LOCAL only (never published)
+ let dur;
+ try{dur=await idbGet(KKEY);}catch(e){}
+ if(!dur){try{const raw=localStorage.getItem(LSKEY);if(raw)dur=JSON.parse(raw);}catch(e){}}
+ if(!dur&&mem[LSKEY])dur=mem[LSKEY];
+ if(dur&&typeof dur==='object'){
+  if(dur.kh&&!d.settings.adminHash)d.settings.adminHash=dur.kh;
+  if(dur.rh&&!d.settings.recoveryHash)d.settings.recoveryHash=dur.rh;
+  ADMIN_KEY_PLAIN=dur.kp||null; RECOVERY_PLAIN=dur.rp||null;
+ }
  migrate();
+ if(d.settings.adminHash)persistCreds();
 }
-function persistKey(k){ADMIN_KEY_CACHE=k;try{idbSet(KKEY,k);}catch(e){}try{localStorage.setItem(LSKEY,k);}catch(e){mem[LSKEY]=k;}}
+function persistCreds(){
+ const s=store.data.settings;
+ const dur={kh:s.adminHash||null,rh:s.recoveryHash||null,kp:ADMIN_KEY_PLAIN||null,rp:RECOVERY_PLAIN||null};
+ try{idbSet(KKEY,dur);}catch(e){}
+ try{localStorage.setItem(LSKEY,JSON.stringify(dur));}catch(e){mem[LSKEY]=dur;}
+}
 
 /* ===== CLOUD PUBLISH (shared live data for all visitors) ===== */
 const PUBLISH_FILE='data.json';
@@ -900,7 +961,7 @@ async function fetchPublished(){
 // customer-facing shop config only — never ships the password, carts, or personal details
 function publishPayload(){
  const d=jclone(store.data);
- if(d.settings)d.settings.adminKey=null;
+ if(d.settings){d.settings.adminKey=null;}   // never ship the legacy/raw key; adminHash + recoveryHash are one-way and safe
  delete d.customer;delete d.order;
  d.rev=store.data.rev||Date.now();
  return d;
@@ -911,7 +972,15 @@ function adoptPublished(pub){
  store.data.customer=lc||{name:'',phone:'',instagram:''};
  store.data.order=Array.isArray(lo)?lo:[];
  if(!store.data.settings)store.data.settings={};
- if(ADMIN_KEY_CACHE)store.data.settings.adminKey=ADMIN_KEY_CACHE; // keep this device's owner key
+ // credential hashes travel inside the published file so every device recognises the same key.
+ // if the published file has none yet, keep this device's own lock so the owner stays protected.
+ if(!store.data.settings.adminHash){
+   let dh=null,rh=null;
+   if(mem[LSKEY]&&mem[LSKEY].kh){dh=mem[LSKEY].kh;rh=mem[LSKEY].rh;}
+   try{const raw=localStorage.getItem(LSKEY);if(raw){const o=JSON.parse(raw);dh=dh||o.kh;rh=rh||o.rh;}}catch(e){}
+   if(dh)store.data.settings.adminHash=dh;
+   if(rh&&!store.data.settings.recoveryHash)store.data.settings.recoveryHash=rh;
+ }
  if(ll)store.data.settings.lang=ll;
  migrate();save();
 }
@@ -926,12 +995,16 @@ function migrate(){
  const d=store.data;
  d.settings=Object.assign({},SEED.settings,d.settings||{});
  if(!d.customer)d.customer=jclone(SEED.customer);
+ if(!d.pickup)d.pickup={loc:'shop',day:'',time:''};
  if(!Array.isArray(d.order))d.order=[];
  if(!Array.isArray(d.products))d.products=jclone(SEED.products);
  if(!Array.isArray(d.guides))d.guides=jclone(SEED.guides);
  if(!Array.isArray(d.banners))d.banners=jclone(SEED.banners);
  if(!d.bbq||!Array.isArray(d.bbq.sections))d.bbq=jclone(SEED.bbq);
  if(!d.settings.giveaway)d.settings.giveaway=jclone(SEED.settings.giveaway);
+ // one-time upgrade: convert an old typed password into the new key-hash system so nobody gets locked out
+ if(!d.settings.adminHash&&d.settings.adminKey){try{const pw=atob(d.settings.adminKey);d.settings.adminHash=hkey(pw);ADMIN_KEY_PLAIN=pw;}catch(e){}}
+ d.settings.adminKey=null;
  const MARINATABLE=new Set([1,2,3,4,5,6,7,12,13,17,18,19,20]);
  d.products.forEach(p=>{if(!p.icon)p.icon='steak';if(p.marinated===undefined)p.marinated=(p.cat==='marinated');if(!p.descEs)p.descEs='';if(p.marinatable===undefined)p.marinatable=MARINATABLE.has(p.id);});
  LANG=(d.settings.lang==='es')?'es':'en';
@@ -954,7 +1027,121 @@ const money=n=>'$'+Number(n).toFixed(2);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let toastT;
 function toast(msg){$('#toastMsg').textContent=msg;const t=$('#toast');t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),1700);}
+let _actx=null;
+function playChaCing(){
+ try{
+  _actx=_actx||new (window.AudioContext||window.webkitAudioContext)();
+  const ctx=_actx;if(ctx.state==='suspended')ctx.resume();
+  const now=ctx.currentTime;
+  const bell=(freq,t,dur,vol)=>{
+   const o=ctx.createOscillator(),g=ctx.createGain(),o2=ctx.createOscillator(),g2=ctx.createGain();
+   o.type='triangle';o.frequency.value=freq;o2.type='sine';o2.frequency.value=freq*2.02;
+   o.connect(g);o2.connect(g2);g.connect(ctx.destination);g2.connect(ctx.destination);
+   g.gain.setValueAtTime(0,now+t);g.gain.linearRampToValueAtTime(vol,now+t+0.006);g.gain.exponentialRampToValueAtTime(0.0001,now+t+dur);
+   g2.gain.setValueAtTime(0,now+t);g2.gain.linearRampToValueAtTime(vol*0.35,now+t+0.006);g2.gain.exponentialRampToValueAtTime(0.0001,now+t+dur*0.7);
+   o.start(now+t);o2.start(now+t);o.stop(now+t+dur+0.03);o2.stop(now+t+dur+0.03);
+  };
+  // cash-drawer tick
+  const len=Math.floor(ctx.sampleRate*0.045);const nb=ctx.createBuffer(1,len,ctx.sampleRate);const d=nb.getChannelData(0);
+  for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2);
+  const ns=ctx.createBufferSource();ns.buffer=nb;const nf=ctx.createBiquadFilter();nf.type='highpass';nf.frequency.value=2600;
+  const ng=ctx.createGain();ng.gain.value=0.13;ns.connect(nf);nf.connect(ng);ng.connect(ctx.destination);ns.start(now);
+  // two bright ascending dings = "cha-ching"
+  bell(1318.5,0.00,0.17,0.22);   // E6
+  bell(1567.98,0.10,0.55,0.26);  // G6
+ }catch(e){}
+}
 function prodById(id){return store.data.products.find(p=>p.id==id);}
+/* pickup scheduling */
+const HOURS={
+ shop:{days:[0,1,2,3,4,5,6],open:540,close:1140,nameEn:'Meat Shop',nameEs:'Carnicería',hoursEn:'Every day · 9 AM–7 PM',hoursEs:'Todos los días · 9 AM–7 PM'},
+ bbq:{days:[4,5,6,0],open:600,close:1080,nameEn:'BBQ (outdoor)',nameEs:'BBQ (afuera)',hoursEn:'Thu–Sun · 10 AM–6 PM',hoursEs:'Jue–Dom · 10 AM–6 PM'}
+};
+function pad2(n){return (n<10?'0':'')+n;}
+function ymd(d){return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());}
+function fmtTime(mins){let h=Math.floor(mins/60),m=mins%60;const ap=h>=12?'PM':'AM';let hh=h%12;if(hh===0)hh=12;return hh+':'+pad2(m)+' '+ap;}
+function pickupDays(loc){
+ const cfg=HOURS[loc]||HOURS.shop;const out=[];const now=new Date();
+ const dEn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],dEs=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+ const mEn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],mEs=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+ for(let i=0;i<14&&out.length<8;i++){
+  const d=new Date(now);d.setDate(now.getDate()+i);d.setHours(0,0,0,0);
+  if(!cfg.days.includes(d.getDay()))continue;
+  if(i===0){const nm=now.getHours()*60+now.getMinutes();if(nm>cfg.close-20)continue;}
+  const dow=(LANG==='es'?dEs:dEn)[d.getDay()],mon=(LANG==='es'?mEs:mEn)[d.getMonth()];
+  let label;if(i===0)label=(LANG==='es'?'Hoy':'Today')+' ('+dow+')';else if(i===1)label=(LANG==='es'?'Mañana':'Tomorrow')+' ('+dow+')';else label=dow+', '+mon+' '+d.getDate();
+  out.push({value:ymd(d),label});
+ }
+ return out;
+}
+function pickupTimes(loc,dayValue){
+ const cfg=HOURS[loc]||HOURS.shop;const out=[];const now=new Date();
+ const isToday=dayValue===ymd(now);const nm=now.getHours()*60+now.getMinutes();
+ for(let m=cfg.open;m<=cfg.close;m+=30){if(isToday&&m<nm+20)continue;out.push({value:pad2(Math.floor(m/60))+':'+pad2(m%60),label:fmtTime(m)});}
+ return out;
+}
+function ensurePickup(){
+ const pk=store.data.pickup||(store.data.pickup={loc:'shop',day:'',time:''});
+ if(pk.loc!=='shop'&&pk.loc!=='bbq')pk.loc='shop';
+ const days=pickupDays(pk.loc);if(!days.find(d=>d.value===pk.day))pk.day=days.length?days[0].value:'';
+ const times=pickupTimes(pk.loc,pk.day);if(!times.find(t=>t.value===pk.time))pk.time=times.length?times[0].value:'';
+ return pk;
+}
+function pickupLabel(){
+ const pk=store.data.pickup;if(!pk||!pk.day||!pk.time)return null;
+ const cfg=HOURS[pk.loc]||HOURS.shop;const locName=(LANG==='es')?cfg.nameEs:cfg.nameEn;
+ const days=pickupDays(pk.loc);const d=days.find(x=>x.value===pk.day);
+ const parts=pk.time.split(':');const when=(d?d.label:pk.day)+' · '+fmtTime(parseInt(parts[0])*60+parseInt(parts[1]));
+ return {loc:locName,when};
+}
+/* best-effort EN→ES translation of customer notes so staff can read them.
+   Multi-word phrases first, then ingredients, then connective words (no/and/with...). */
+const NOTE_ES=[
+// prep / cooking phrases
+['non marinated','sin marinar'],['non-marinated','sin marinar'],['not marinated','sin marinar'],['no marinade','sin marinar'],
+['well done','bien cocido'],['medium rare','término medio rojo'],['medium well','tres cuartos'],
+['thin sliced','rebanado fino'],['thinly sliced','rebanado fino'],['sliced thin','rebanado fino'],['thin cut','corte fino'],['cut thin','cortar fino'],['cut it thin','cortar fino'],
+['thick cut','corte grueso'],['cut thick','cortar grueso'],['cut in half','cortado a la mitad'],['cut in halves','cortado a la mitad'],['cut in pieces','cortado en pedazos'],
+['cut up','cortado'],['cleaned up','limpio'],['cleaned up','limpio'],['trimmed','limpio'],
+['for tacos','para tacos'],['for asada','para asada'],['for grilling','para asar'],['for the grill','para asar'],['for carne asada','para carne asada'],
+['no fat','sin grasa'],['less fat','menos grasa'],['extra fat','más grasa'],['more fat','más grasa'],['little fat','poca grasa'],
+['bag separately','en bolsa aparte'],['separate bags','en bolsas separadas'],['bagged separately','en bolsa aparte'],
+['sour cream','crema'],['bell pepper','pimiento'],['bell peppers','pimientos'],['green onion','cebollín'],['green onions','cebollín'],
+['french roll','bolillo'],['french bread','bolillo'],['on the side','aparte'],['to go','para llevar'],['thank you','gracias'],
+['no bones','sin hueso'],['no bone','sin hueso'],['bone in','con hueso'],['bone-in','con hueso'],['skin on','con piel'],
+['a lot of','mucho'],['lots of','mucho'],['little bit','poquito'],['a little','poco'],['not too','no muy'],
+// ingredients / nouns
+['mustard','mostaza'],['ketchup','cátsup'],['mayonnaise','mayonesa'],['mayo','mayonesa'],['lettuce','lechuga'],
+['tomatoes','tomates'],['tomato','tomate'],['onions','cebolla'],['onion','cebolla'],['cilantro','cilantro'],
+['cheese','queso'],['jalapenos','jalapeños'],['jalapeno','jalapeño'],['jalapeños','jalapeños'],['pickles','pepinillos'],['pickle','pepinillo'],
+['avocado','aguacate'],['guacamole','guacamole'],['beans','frijoles'],['rice','arroz'],['bread','pan'],['roll','bolillo'],
+['tortillas','tortillas'],['tortilla','tortilla'],['limes','limones'],['lime','limón'],['lemon','limón'],['cream','crema'],
+['corn','maíz'],['peppers','chiles'],['pepper','chile'],['garlic','ajo'],['salsa','salsa'],['sauce','salsa'],['spice','condimento'],
+['bag','bolsa'],['bags','bolsas'],['pound','libra'],['pounds','libras'],['piece','pieza'],['pieces','piezas'],['slices','rebanadas'],['slice','rebanada'],
+// prep single words
+['marinated','marinado'],['boneless','sin hueso'],['skinless','sin piel'],['ground','molido'],['grind','moler'],
+['chopped','picado'],['whole','entero'],['half','medio'],['spicy','picante'],['mild','suave'],['plain','sin nada'],
+['fresh','fresco'],['lean','magro'],['fat','grasa'],['thin','delgado'],['thick','grueso'],['cooked','cocido'],['raw','crudo'],
+['hot','caliente'],['cold','frío'],['large','grande'],['small','chico'],['medium','mediano'],['fried','frito'],['grilled','asado'],
+['well','bien'],['rare','poco cocido'],['warm','caliente'],['clean','limpio'],['soft','suave'],['crispy','crujiente'],
+// verbs / actions
+['add','agregar'],['remove','quitar'],['keep','dejar'],['leave out','quitar'],['include','incluir'],['heat','calentar'],['warm up','calentar'],
+// connectives / quantity (kept last so they don't split phrases)
+['without','sin'],['with','con'],['extra','extra'],['more','más'],['less','menos'],['little','poco'],['lots','mucho'],
+['please','por favor'],['and','y'],['or','o'],['for','para'],['no','sin'],['not','sin'],['only','solo'],['also','también'],
+['on top','encima'],['inside','adentro'],['separately','por separado'],['together','junto']
+];
+function esc2(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function translateNote(t){
+ if(!t)return '';let out=' '+String(t)+' ';
+ for(const [en,es] of NOTE_ES){out=out.replace(new RegExp('(^|[^a-záéíóúñ0-9])'+esc2(en)+'(?![a-záéíóúñ])','gi'),(m,p1)=>p1+es);}
+ return out.replace(/\s+/g,' ').trim();
+}
+function noteEsLine(note){
+ if(!note)return '';const tr=translateNote(note);
+ const norm=s=>s.toLowerCase().replace(/[\s,.;!¡¿?]+/g,' ').trim();
+ return (norm(tr)!==norm(note))?tr:'';
+}
 function effPrice(p){return (p.special&&p.specialPrice)?p.specialPrice:p.price;}
 function pName(p){return (LANG==='es'&&p.es)?p.es:p.name;}
 function pSub(p){return (LANG==='es')?p.name:(p.es||'');}
@@ -1251,41 +1438,67 @@ function openOrder(){
     <input class="onote" data-onote="${i}" placeholder="${T('note_ph')}" value="${esc(x.note||'')}" maxlength="120"></div>`).join('');
   body=`<div class="os-head"><h2>${ui('receipt')} ${T('order_title')}</h2><p>${T('order_sub')}</p></div>
     <div class="os-body">${rows}
+      ${pickupHTML()}
       <div class="os-total"><span>${T('est_total')}</span><span class="tv">${money(orderTotal())}</span></div>
       <button class="btn-primary" id="genReceipt">${ui('receipt')} ${T('send_order')}</button>
       <button class="btn-ghost" id="clearOrder">${ui('trash')} ${T('clear_order')}</button></div>`;
  }
  $('#oSheetBody').innerHTML=body;
+ bindPickup();
  $('#oSheetBody').querySelectorAll('[data-onote]').forEach(inp=>inp.addEventListener('input',()=>{o[inp.dataset.onote].note=inp.value;save();}));
  $('#oSheetBody').querySelectorAll('[data-oinc]').forEach(b=>b.onclick=()=>{o[b.dataset.oinc].qty++;save();updateFab();openOrder();});
  $('#oSheetBody').querySelectorAll('[data-odec]').forEach(b=>b.onclick=()=>{const i=b.dataset.odec;o[i].qty--;if(o[i].qty<=0)o.splice(i,1);save();updateFab();openOrder();});
  $('#clearOrder')&&($('#clearOrder').onclick=()=>{store.data.order=[];save();updateFab();openOrder();});
- $('#genReceipt')&&($('#genReceipt').onclick=showReceipt);
+ $('#genReceipt')&&($('#genReceipt').onclick=()=>{playChaCing();showReceipt();});
  openSheet('#oSheet');
+}
+function pickupHTML(){
+ const pk=ensurePickup();
+ const days=pickupDays(pk.loc),times=pickupTimes(pk.loc,pk.day);
+ const seg=`<div class="pk-seg">
+   <button data-loc="shop" class="${pk.loc==='shop'?'on':''}">${T('loc_shop')}<small>${(LANG==='es')?HOURS.shop.hoursEs:HOURS.shop.hoursEn}</small></button>
+   <button data-loc="bbq" class="${pk.loc==='bbq'?'on':''}">${T('loc_bbq')}<small>${(LANG==='es')?HOURS.bbq.hoursEs:HOURS.bbq.hoursEn}</small></button></div>`;
+ const daySel=`<select id="pkDay">${days.map(d=>`<option value="${d.value}" ${d.value===pk.day?'selected':''}>${esc(d.label)}</option>`).join('')}</select>`;
+ const timeSel=`<select id="pkTime">${times.map(t=>`<option value="${t.value}" ${t.value===pk.time?'selected':''}>${esc(t.label)}</option>`).join('')}</select>`;
+ return `<div class="pickup"><div class="pk-h">${ui('clock')} ${T('pickup_when')}</div>${seg}
+   <div class="pk-row"><div class="pk-field"><label>${T('pickup_day')}</label>${daySel}</div>
+     <div class="pk-field"><label>${T('pickup_time')}</label>${timeSel}</div></div></div>`;
+}
+function bindPickup(){
+ const pk=store.data.pickup;if(!pk)return;
+ $('#oSheetBody').querySelectorAll('[data-loc]').forEach(b=>b.onclick=()=>{pk.loc=b.dataset.loc;pk.day='';pk.time='';ensurePickup();save();openOrder();});
+ const dsel=$('#pkDay');if(dsel)dsel.onchange=e=>{pk.day=e.target.value;pk.time='';ensurePickup();save();openOrder();};
+ const tsel=$('#pkTime');if(tsel)tsel.onchange=e=>{pk.time=e.target.value;save();};
 }
 function orderText(){
  const s=store.data.settings,c=store.data.customer,o=store.data.order;
  let t=`El Cejas Meat Market — ${T('receipt_tag')}\n`;
  if(c.name||c.phone||c.instagram){t+=`${T('for')}: ${c.name||''} ${c.phone?'· '+c.phone:''} ${c.instagram?'· '+c.instagram:''}\n`;}
  t+='\n';
- o.forEach(x=>{t+=`${x.qty} ${x.unit==='lb'?T('lb'):'x'}  ${x.name}${x.prep?' ('+x.prep+')':''}  —  ${money(x.price*x.qty)}\n`;if(x.note)t+=`   ${T('note_tag')}: ${x.note}\n`;});
+ o.forEach(x=>{t+=`${x.qty} ${x.unit==='lb'?T('lb'):'x'}  ${x.name}${x.prep?' ('+x.prep+')':''}  —  ${money(x.price*x.qty)}\n`;if(x.note){t+=`   ${T('note_tag')}: ${x.note}\n`;const es=noteEsLine(x.note);if(es)t+=`   ES: ${es}\n`;}});
  t+=`\n${T('est_total')}: ${money(orderTotal())}\n${T('review_warn')}\n`;
+ const PK=pickupLabel();if(PK)t+=`\n${T('pickup_at')}: ${PK.loc} — ${PK.when}\n`;
+ t+=`\n${T('pay_inside_t')}: ${T('pay_inside')}\n`;
  t+=`\n${T('location')}: ${s.address}\n${T('phone')}: ${s.phone}\n`;
  return t;
 }
 function showReceipt(){
  const s=store.data.settings,c=store.data.customer,o=store.data.order;
  const now=new Date();const dstr=now.toLocaleString(LANG==='es'?'es-MX':'en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
- const lines=o.map(x=>`<div class="rc-line"><span class="rc-q">${x.qty}${x.unit==='lb'?' '+T('lb'):'×'}</span><span class="rc-n">${esc(x.name)}${x.prep?` <span class="rc-prep">(${esc(x.prep)})</span>`:''}</span><span class="rc-p">${money(x.price*x.qty)}</span></div>${x.note?`<div class="rc-note">↳ ${esc(x.note)}</div>`:''}`).join('');
+ const lines=o.map(x=>{const es=noteEsLine(x.note);return `<div class="rc-line"><span class="rc-q">${x.qty}${x.unit==='lb'?' '+T('lb'):'×'}</span><span class="rc-n">${esc(x.name)}${x.prep?` <span class="rc-prep">(${esc(x.prep)})</span>`:''}</span><span class="rc-p">${money(x.price*x.qty)}</span></div>${x.note?`<div class="rc-note">↳ ${esc(x.note)}${es?` <span style="color:#6c3bb0">· ES: ${esc(es)}</span>`:''}</div>`:''}`;}).join('');
  const cust=(c.name||c.phone||c.instagram)?`<div class="rc-cust"><b>${T('for')}:</b> ${esc(c.name||'')}${c.phone?' · '+esc(c.phone):''}${c.instagram?' · '+esc(c.instagram):''}</div>`:'';
  const igLine=s.instagram?`<br>${T('instagram')}: ${esc(s.instagram)}`:'';
+ const PK=pickupLabel();
+ const pkLine=PK?`<div class="rc-pickup">${ui('clock')} <b>${T('pickup_at')}:</b> ${esc(PK.loc)} — ${esc(PK.when)}</div>`:'';
+ const payin=`<div class="rc-payin"><span class="pt">${T('pay_inside_t')}</span>${T('pay_inside')}</div>`;
  $('#oSheetBody').innerHTML=`<div class="receipt">
    <div class="rc-top"><div class="rc-brand">El Cejas</div><div class="rc-sub">${T('meat_market')}</div><div class="rc-tag">${T('receipt_tag')}</div><div class="rc-meta">${dstr}</div></div>
-   ${cust}
+   ${cust}${pkLine}
    <div class="rc-items">${lines}</div>
    <div class="rc-tot"><span>${T('est_total')}</span><span>${money(orderTotal())}</span></div>
    <div class="rc-fine">${T('receipt_fine')}</div>
    <div class="rc-warn">${T('review_warn')}</div>
+   ${payin}
    <div class="rc-cust">${T('location')}: ${esc(s.address)}<br>${T('phone')}: ${esc(s.phone)}${igLine}</div>
    <div class="rc-how">${T('receipt_how')}</div></div>
    <div class="rc-actions">
@@ -1317,13 +1530,15 @@ async function makeReceiptImage(mode){
  push('sub',22);
  push('pill',54);
  push('date',30);
+ const PK=pickupLabel();
+ if(PK){push({t:'pickup',text:T('pickup_at')+': '+PK.loc+' — '+PK.when},30);}
  y+=18; push('div',2); y+=16;
  // items
  mc.font='700 26px Anton';
  o.forEach((x,i)=>{
   push({t:'item',x},34);
   if(x.prep){push({t:'prep',x},22);}
-  if(x.note){mc.font='italic 22px Inter';const nl=wrapText(mc,'↳ '+x.note,CW-30);nl.forEach(()=>push({t:'noteline'},26));seg[seg.length-1].last=true;seg._notes=(seg._notes||{});}
+  if(x.note){mc.font='italic 22px Inter';const _es=noteEsLine(x.note);const _full='↳ '+x.note+(_es?('   ES: '+_es):'');const nl=wrapText(mc,_full,CW-30);nl.forEach(()=>push({t:'noteline'},26));seg[seg.length-1].last=true;seg._notes=(seg._notes||{});}
   y+=6;
  });
  y+=10; push('div',2); y+=18;
@@ -1331,6 +1546,8 @@ async function makeReceiptImage(mode){
  mc.font='400 22px Inter';const fine=wrapText(mc,T('receipt_fine'),CW);fine.forEach(()=>push('fineline',28));
  y+=16;
  mc.font='800 22px Anton';const warn=wrapText(mc,T('review_warn'),CW-40);const warnH=warn.length*30+34;push({t:'warn',warn},warnH);
+ y+=16;
+ mc.font='700 22px Inter';const pin=wrapText(mc,T('pay_inside'),CW-44);const pinH=pin.length*30+48;push({t:'payin',pin},pinH);
  y+=18;
  const box=[`${T('location')}: ${s.address}`,`${T('phone')}: ${s.phone}`];if(s.instagram)box.push(`${T('instagram')}: ${s.instagram}`);
  let boxLines=[];mc.font='400 24px Inter';box.forEach(b=>{wrapText(mc,b,CW-32).forEach(l=>boxLines.push(l));});
@@ -1351,6 +1568,7 @@ async function makeReceiptImage(mode){
   else if(b.fn==='sub'){ctx.font='400 15px Anton';ctx.fillStyle='#7a6f66';ctx.textAlign='center';ctx.save();ctx.translate(cx,yy+14);let sp='M E A T   M A R K E T';ctx.fillText(sp,0,0);ctx.restore();}
   else if(b.fn==='pill'){const pw=200,ph=36,px=cx-pw/2,py=yy+4;roundRect(ctx,px,py,pw,ph,18);ctx.fillStyle='#E01E2B';ctx.fill();dcenter(T('receipt_tag').toUpperCase(),'800 15px Inter','#fff',py+24);}
   else if(b.fn==='date'){const dstr=new Date().toLocaleString(LANG==='es'?'es-MX':'en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});dcenter(dstr,'400 15px Inter','#5c534c',yy+16);}
+  else if(k==='pickup'){dcenter(b.fn.text,'700 15px Inter','#1f7a44',yy+18);}
   else if(b.fn==='div'){dashed(ctx,PAD,yy+1,W-PAD,yy+1);}
   else if(k==='item'){const x=b.fn.x;ctx.textAlign='left';ctx.font='700 15px Inter';ctx.fillStyle='#7a6f66';const q=x.qty+(x.unit==='lb'?' '+T('lb'):'×');ctx.fillText(q,PAD,yy+18);const qw=ctx.measureText(q).width+12;ctx.fillStyle='#1a1416';ctx.font='400 17px Inter';ctx.fillText(x.name,PAD+qw,yy+18);ctx.textAlign='right';ctx.font='700 17px Inter';ctx.fillText(money(x.price*x.qty),W-PAD,yy+18);}
   else if(k==='prep'){ctx.textAlign='left';ctx.font='700 13px Inter';ctx.fillStyle='#6c3bb0';ctx.fillText('• '+b.fn.x.prep,PAD+2,yy+14);}
@@ -1358,6 +1576,7 @@ async function makeReceiptImage(mode){
   else if(b.fn==='total'){ctx.textAlign='left';ctx.font='400 26px Anton';ctx.fillStyle='#1a1416';ctx.fillText(T('est_total'),PAD,yy+28);ctx.textAlign='right';ctx.fillText(money(orderTotal()),W-PAD,yy+28);}
   else if(b.fn==='fineline'){}
   else if(k==='warn'){const wh=b.fn.warn.length*30+34;roundRect(ctx,PAD,yy,CW,wh,12);ctx.fillStyle='rgba(224,30,43,.09)';ctx.fill();ctx.lineWidth=1.5;ctx.strokeStyle='rgba(165,15,26,.5)';ctx.stroke();ctx.font='800 15px Anton';ctx.fillStyle='#A50F1A';ctx.textAlign='center';b.fn.warn.forEach((l,i)=>ctx.fillText(l.toUpperCase(),cx,yy+28+i*30));}
+  else if(k==='payin'){const wh=b.fn.pin.length*30+48;roundRect(ctx,PAD,yy,CW,wh,12);ctx.fillStyle='rgba(224,164,28,.13)';ctx.fill();ctx.lineWidth=1.5;ctx.strokeStyle='rgba(184,134,11,.55)';ctx.stroke();ctx.textAlign='center';ctx.font='800 14px Anton';ctx.fillStyle='#a5720f';ctx.fillText(T('pay_inside_t').toUpperCase(),cx,yy+24);ctx.font='700 14px Inter';ctx.fillStyle='#7a5410';b.fn.pin.forEach((l,i)=>ctx.fillText(l,cx,yy+48+i*30));}
   else if(k==='box'){roundRect(ctx,PAD,yy,CW,b.fn.boxLines.length*30+28,10);ctx.fillStyle='rgba(0,0,0,.05)';ctx.fill();ctx.font='400 15px Inter';ctx.fillStyle='#3a3230';ctx.textAlign='left';b.fn.boxLines.forEach((l,i)=>ctx.fillText(l,PAD+16,yy+30+i*30));}
   else if(b.fn==='howline'){}
  }
@@ -1380,7 +1599,7 @@ function redrawWrapped(ctx,seg,o,W,PAD,CW){
  // notes
  let idx=0;
  for(const b of seg){const k=(typeof b.fn==='object')?b.fn.t:b.fn;if(k!=='item')continue;const x=b.fn.x;if(!x.note)continue;
-  ctx.font='italic 14px Inter';ctx.fillStyle='#8a5a10';const nl=wrapText(ctx,'↳ '+x.note,CW-30);
+  ctx.font='italic 14px Inter';ctx.fillStyle='#8a5a10';const _es=noteEsLine(x.note);const _full='↳ '+x.note+(_es?('   ES: '+_es):'');const nl=wrapText(ctx,_full,CW-30);
   // find noteline blocks after this item
   const start=seg.indexOf(b);let li=0;
   for(let j=start+1;j<seg.length;j++){const kk=(typeof seg[j].fn==='object')?seg[j].fn.t:seg[j].fn;if(kk==='noteline'){if(li<nl.length)ctx.fillText(nl[li],PAD+14,seg[j].y0+16);li++;}else if(kk==='item'||kk==='prep'){continue;}else break;}
@@ -1397,6 +1616,8 @@ function openSheet(sel){$('#scrim').classList.add('open');$(sel).classList.add('
 function closeSheets(){$('#scrim').classList.remove('open');$('#pSheet').classList.remove('open');$('#oSheet').classList.remove('open');}
 $('#scrim').onclick=closeSheets;
 $('#orderFab').onclick=openOrder;
+$('#pClose').innerHTML=ui('chevd');$('#pClose').onclick=closeSheets;
+$('#oClose').innerHTML=ui('home');$('#oClose').onclick=()=>{closeSheets();go('home');};
 
 /* ============ NAV ============ */
 const RENDER={home:renderHome,shop:renderShop,bbq:renderBBQ,grill:renderGrill,contact:renderContact};
@@ -1430,25 +1651,75 @@ $('#logoTap').addEventListener('click',()=>{tapCount++;clearTimeout(tapTimer);ta
 function openAdmin(){$('#admin').classList.add('open');if(adminUnlocked||getStay()){adminUnlocked=true;showDash();}else showAuth();}
 function closeAdmin(){$('#admin').classList.remove('open');}
 function showAuth(){
- $('#adminDash').classList.remove('on');const first=!store.data.settings.adminKey;const el=$('#adminAuth');el.style.display='flex';
- el.innerHTML=`<div class="lock">${ui('bell')}</div><h2>${first?'Set your admin key':'Admin sign in'}</h2>
-   <p>${first?'Create a private key (like a PIN or password) to manage prices, stock, photos and specials. Keep it safe.':'Enter your admin key to manage the store.'}</p>
+ $('#adminDash').classList.remove('on');const el=$('#adminAuth');el.style.display='flex';
+ const hasAdmin=!!store.data.settings.adminHash;
+ if(!hasAdmin){ showSetup(); return; }
+ el.innerHTML=`<div class="lock">${ui('bell')}</div><h2>Admin sign in</h2>
+   <p>Enter your admin access key to manage the store. Only your key works — new keys can’t be created here.</p>
    <div class="auth-err" id="authErr"></div>
-   <input class="key-in" id="keyIn" type="password" placeholder="${first?'Create a key':'Your key'}" autocomplete="off">
-   ${first?'<input class="key-in" id="keyIn2" type="password" placeholder="Confirm key" autocomplete="off">':''}
+   <input class="key-in" id="keyIn" type="text" inputmode="text" autocapitalize="characters" placeholder="ELC-XXXX-XXXX" autocomplete="off">
    <label class="stay"><input type="checkbox" id="staySigned" ${getStay()?'checked':''}> Stay signed in on this device</label>
-   <button class="admin-btn" id="keyGo">${first?'Save & open dashboard':'Unlock'}</button>
+   <button class="admin-btn" id="keyGo">Unlock</button>
+   <button class="admin-btn ghost" id="forgotKey">Forgot key? Use recovery code</button>
    <button class="admin-btn ghost" id="keyCancel">Back to store</button>`;
  setTimeout(()=>$('#keyIn')&&$('#keyIn').focus(),120);
  $('#keyCancel').onclick=closeAdmin;$('#keyGo').onclick=submitKey;
- el.querySelectorAll('.key-in').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')submitKey();}));
+ $('#forgotKey').onclick=showRecover;
+ $('#keyIn').addEventListener('keydown',e=>{if(e.key==='Enter')submitKey();});
+}
+function showSetup(){
+ const el=$('#adminAuth');el.style.display='flex';
+ el.innerHTML=`<div class="lock">${ui('bell')}</div><h2>Set up admin</h2>
+   <p>Tap below and the app will generate a secure <b>Admin Key</b> and a <b>Recovery Code</b>. Save them somewhere safe — you’ll use the key to sign in on any device.</p>
+   <div class="auth-err" id="authErr"></div>
+   <button class="admin-btn" id="genBtn">${ui('star')} Generate my admin key</button>
+   <button class="admin-btn ghost" id="keyCancel">Back to store</button>`;
+ $('#keyCancel').onclick=closeAdmin;
+ $('#genBtn').onclick=()=>{
+   const key=genKey('ELC'), rec=genKey('REC');
+   ADMIN_KEY_PLAIN=key; RECOVERY_PLAIN=rec;
+   store.data.settings.adminHash=hkey(key);
+   store.data.settings.recoveryHash=hkey(rec);
+   adminUnlocked=true; store.data.rev=Date.now(); persistCreds(); save(); setStay(true);
+   el.innerHTML=`<div class="lock">${ui('check')}</div><h2>Save these now</h2>
+     <p>Write these down or screenshot them. Anyone with the Admin Key can edit your store.</p>
+     <div class="cred-box"><div class="cred-lbl">Admin Key — to sign in</div><div class="cred-val" id="cvKey">${esc(key)}</div><button class="cred-copy" data-cc="${esc(key)}">Copy key</button></div>
+     <div class="cred-box"><div class="cred-lbl">Recovery Code — keep safe, resets a lost key</div><div class="cred-val" id="cvRec">${esc(rec)}</div><button class="cred-copy" data-cc="${esc(rec)}">Copy code</button></div>
+     <p style="color:var(--amber);font-size:12.5px;margin:6px 0 16px">Important: after this, go to <b>Publish &amp; Access → Publish</b> and upload data.json so every device locks to this key.</p>
+     <button class="admin-btn" id="gotIt">I saved them — open dashboard</button>`;
+   el.querySelectorAll('[data-cc]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.cc);toast('Copied');}catch(e){toast('Copy it manually');}});
+   $('#gotIt').onclick=showDash;
+ };
+}
+function showRecover(){
+ const el=$('#adminAuth');
+ el.innerHTML=`<div class="lock">${ui('bell')}</div><h2>Reset with recovery code</h2>
+   <p>Enter your Recovery Code. We’ll generate a brand-new Admin Key for you.</p>
+   <div class="auth-err" id="authErr"></div>
+   <input class="key-in" id="recIn" type="text" autocapitalize="characters" placeholder="REC-XXXX-XXXX" autocomplete="off">
+   <button class="admin-btn" id="recGo">Reset my key</button>
+   <button class="admin-btn ghost" id="recBack">Back</button>`;
+ setTimeout(()=>$('#recIn')&&$('#recIn').focus(),120);
+ $('#recBack').onclick=showAuth;
+ $('#recGo').onclick=()=>{
+   const v=$('#recIn').value.trim();const err=$('#authErr');
+   if(!store.data.settings.recoveryHash){err.textContent='No recovery code is set on this store.';return;}
+   if(hkey(v)!==store.data.settings.recoveryHash){err.textContent='Recovery code is incorrect.';const i=$('#recIn');i.classList.add('shake');setTimeout(()=>i.classList.remove('shake'),420);return;}
+   const key=genKey('ELC');ADMIN_KEY_PLAIN=key;store.data.settings.adminHash=hkey(key);adminUnlocked=true;store.data.rev=Date.now();persistCreds();save();setStay(true);
+   el.innerHTML=`<div class="lock">${ui('check')}</div><h2>New admin key</h2>
+     <p>Save your new key. Then Publish &amp; upload data.json so all devices use it.</p>
+     <div class="cred-box"><div class="cred-lbl">New Admin Key</div><div class="cred-val">${esc(key)}</div><button class="cred-copy" data-cc="${esc(key)}">Copy key</button></div>
+     <button class="admin-btn" id="gotIt">Open dashboard</button>`;
+   el.querySelectorAll('[data-cc]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.cc);toast('Copied');}catch(e){}});
+   $('#gotIt').onclick=showDash;
+ };
 }
 function submitKey(){
- const first=!store.data.settings.adminKey;const v=$('#keyIn').value.trim();const err=$('#authErr');
- if(first){const v2=$('#keyIn2').value.trim();if(v.length<3){err.textContent='Use at least 3 characters.';shakeKey();return;}if(v!==v2){err.textContent='Keys don’t match.';shakeKey();return;}store.data.settings.adminKey=btoa(v);persistKey(btoa(v));save();setStay($('#staySigned').checked);adminUnlocked=true;toast('Admin key set');showDash();}
- else{if(btoa(v)!==store.data.settings.adminKey){err.textContent='Wrong key. Try again.';shakeKey();return;}setStay($('#staySigned').checked);adminUnlocked=true;showDash();}
+ const v=$('#keyIn').value.trim();const err=$('#authErr');
+ if(hkey(v)!==store.data.settings.adminHash){err.textContent='Wrong key. Try again.';shakeKey();return;}
+ ADMIN_KEY_PLAIN=v;persistCreds();setStay($('#staySigned').checked);adminUnlocked=true;showDash();
 }
-function shakeKey(){const i=$('#keyIn');i.classList.add('shake');setTimeout(()=>i.classList.remove('shake'),420);}
+function shakeKey(){const i=$('#keyIn');if(i){i.classList.add('shake');setTimeout(()=>i.classList.remove('shake'),420);}}
 function showDash(){$('#adminAuth').style.display='none';$('#adminDash').classList.add('on');renderAllAdmin();}
 function renderAllAdmin(){renderAdminProducts();renderAdminPicks();renderAdminGiveaway();renderAdminBanners();renderAdminStore();renderAdminSync();}
 $('#adClose').onclick=()=>{closeAdmin();const cur=($('.tab.active')||{}).dataset?.tab||'home';RENDER[cur]&&RENDER[cur]();updateFab();};
@@ -1578,7 +1849,7 @@ function renderAdminStore(){
  $('#heroFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{heroPend=await resizeImage(f,1400,0.78);$('#heroPrev').innerHTML=`<img src="${heroPend}" style="width:100%;height:100%;object-fit:cover">`;}catch(err){toast('Could not load image');}};
  const hc=$('#heroClear');if(hc)hc.onclick=()=>{heroPend='';$('#heroPrev').innerHTML=ui('camera');};
  $('#stSave').onclick=()=>{s.brand=$('#stName').value.trim()||s.brand;s.welcome=$('#stWelcome').value.trim();s.welcomeEs=$('#stWelcomeEs').value.trim();s.hours=$('#stHours').value.trim();s.bbqHours=$('#stBbq').value.trim();s.bbqHoursEs=$('#stBbqEs').value.trim();s.address=$('#stAddr').value.trim();s.phone=$('#stPhone').value.trim();s.instagram=$('#stIg').value.trim();if(heroPend!==undefined)s.heroImg=heroPend||null;save();$('#brandName').textContent=s.brand;toast('Store info saved');};
- $('#resetAll').onclick=()=>{if(!confirm('Reset ALL products, specials, banners and store info to defaults? Your customer order and details stay. This cannot be undone.'))return;const key=s.adminKey;const cust=store.data.customer;const ord=store.data.order;store.data=jclone(SEED);store.data.settings.adminKey=key;store.data.customer=cust;store.data.order=ord;save();renderAllAdmin();toast('Reset to defaults');};
+ $('#resetAll').onclick=()=>{if(!confirm('Reset ALL products, specials, banners and store info to defaults? Your admin key, customer order and details stay. This cannot be undone.'))return;const ah=s.adminHash,rh=s.recoveryHash;const cust=store.data.customer;const ord=store.data.order;store.data=jclone(SEED);store.data.settings.adminHash=ah;store.data.settings.recoveryHash=rh;store.data.customer=cust;store.data.order=ord;store.data.rev=Date.now();persistCreds();save();renderAllAdmin();toast('Reset to defaults');};
 }
 
 function renderAdminSync(){
@@ -1591,17 +1862,17 @@ function renderAdminSync(){
      <button class="btn-primary" id="pubBtn">${ui('receipt')} Publish — download data.json</button>
      <p style="color:var(--muted-2);font-size:12px;margin-top:12px;line-height:1.5">Then on GitHub: open your repository → <b>Add file → Upload files</b> → drop <code>data.json</code> into the same folder as your app → <b>Commit</b>. Done. (You only upload this one small file each time you change prices, stock, banners, or the giveaway.)</p>
    </div>
-   <div class="signup"><h3>${ui('bell')} Change admin password</h3>
-     <div class="field"><label>Current password</label><input id="cpCur" type="password" autocomplete="off"></div>
-     <div class="field-row"><div class="field"><label>New password</label><input id="cpNew" type="password" autocomplete="off"></div>
-       <div class="field"><label>Confirm new</label><input id="cpNew2" type="password" autocomplete="off"></div></div>
+   <div class="signup"><h3>${ui('bell')} Your admin key</h3>
+     <p style="color:var(--muted);font-size:13px;margin-top:8px;line-height:1.5">Use this key to sign in on any device. Keep it private.</p>
+     <div class="cred-box" style="width:100%;margin-top:12px"><div class="cred-lbl">Admin key</div><div class="cred-val" id="showKey">••••-••••-••••</div>
+       <button class="cred-copy" id="toggKey">Show</button> <button class="cred-copy" id="copyKey">Copy</button></div>
+     <div class="cred-box" style="width:100%"><div class="cred-lbl">Recovery code — resets a lost key</div><div class="cred-val" id="showRec">••••-••••-••••</div>
+       <button class="cred-copy" id="toggRec">Show</button> <button class="cred-copy" id="copyRec">Copy</button></div>
      <div class="auth-err" id="cpErr" style="text-align:left"></div>
-     <button class="btn-primary" id="cpSave">Update password</button>
+     <button class="btn-ghost" id="regenKey">${ui('star')} Generate a new key</button>
    </div>
    <div class="signup"><h3>${ui('user')} Share admin access</h3>
-     <p style="color:var(--muted);font-size:13px;margin-top:8px;line-height:1.5">Give another trusted person owner access. This shares the link and password so they can sign in on their own phone (tap the logo 5 times → enter the password).</p>
-     <label class="stay" style="margin:14px 0 4px"><input type="checkbox" id="revealPw"> Show current password</label>
-     <div id="pwReveal" style="display:none;font-family:monospace;font-size:16px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:6px;letter-spacing:.1em"></div>
+     <p style="color:var(--muted);font-size:13px;margin-top:8px;line-height:1.5">Give another trusted person owner access. This shares the link and your admin key so they can sign in on their own phone (tap the logo 5 times → enter the key).</p>
      <button class="btn-primary" id="shareAccess">${ui('share')} Share admin access</button>
    </div>`;
  $('#pubBtn').onclick=()=>{
@@ -1609,20 +1880,23 @@ function renderAdminSync(){
    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='data.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
    toast('data.json downloaded');
  };
- $('#cpSave').onclick=()=>{
-   const cur=$('#cpCur').value,nw=$('#cpNew').value,n2=$('#cpNew2').value,err=$('#cpErr');err.textContent='';
-   if(btoa(cur)!==store.data.settings.adminKey){err.textContent='Current password is incorrect.';return;}
-   if(nw.length<3){err.textContent='New password needs at least 3 characters.';return;}
-   if(nw!==n2){err.textContent='New passwords don’t match.';return;}
-   store.data.settings.adminKey=btoa(nw);persistKey(btoa(nw));save();
-   $('#cpCur').value=$('#cpNew').value=$('#cpNew2').value='';toast('Password updated');
+ const kv=$('#showKey'),rv=$('#showRec');let kShown=false,rShown=false;
+ const keyText=()=>ADMIN_KEY_PLAIN||'(only shown on the device where it was created)';
+ const recText=()=>RECOVERY_PLAIN||'(only shown on the device where it was created)';
+ $('#toggKey').onclick=()=>{kShown=!kShown;kv.textContent=kShown?keyText():'••••-••••-••••';$('#toggKey').textContent=kShown?'Hide':'Show';};
+ $('#toggRec').onclick=()=>{rShown=!rShown;rv.textContent=rShown?recText():'••••-••••-••••';$('#toggRec').textContent=rShown?'Hide':'Show';};
+ $('#copyKey').onclick=async()=>{if(!ADMIN_KEY_PLAIN){toast('Key not on this device');return;}try{await navigator.clipboard.writeText(ADMIN_KEY_PLAIN);toast('Key copied');}catch(e){}};
+ $('#copyRec').onclick=async()=>{if(!RECOVERY_PLAIN){toast('Code not on this device');return;}try{await navigator.clipboard.writeText(RECOVERY_PLAIN);toast('Code copied');}catch(e){}};
+ $('#regenKey').onclick=()=>{
+   if(!confirm('Generate a new admin key? Your old key will stop working after you Publish. Your recovery code stays the same.'))return;
+   const key=genKey('ELC');ADMIN_KEY_PLAIN=key;store.data.settings.adminHash=hkey(key);store.data.rev=Date.now();persistCreds();save();
+   renderAdminSync();toast('New key generated — Show it, save it, then Publish');
  };
- const revChk=$('#revealPw');
- if(revChk)revChk.onchange=()=>{const box=$('#pwReveal');try{box.textContent=atob(store.data.settings.adminKey||'');}catch(e){box.textContent='(unavailable)';}box.style.display=revChk.checked?'block':'none';};
  $('#shareAccess').onclick=async()=>{
-   let pw='';try{pw=atob(store.data.settings.adminKey||'');}catch(e){}
+   const pw=ADMIN_KEY_PLAIN||'';
+   if(!pw){toast('Open this on the device that has the key');return;}
    const link=location.href.split('#')[0];
-   const msg=`El Cejas Meat Market — admin access\n\nOpen this link on your phone:\n${link}\n\nThen tap the round El Cejas logo (top-left) 5 times quickly, and enter this password:\n${pw}\n\nKeep this private.`;
+   const msg=`El Cejas Meat Market — admin access\n\nOpen this link on your phone:\n${link}\n\nTap the round El Cejas logo (top-left) 5 times quickly, then enter this admin key:\n${pw}\n\nKeep this private.`;
    if(navigator.share){try{await navigator.share({title:'El Cejas admin access',text:msg});return;}catch(e){}}
    try{await navigator.clipboard.writeText(msg);toast('Access details copied');}catch(e){toast('Copy the details manually');}
  };
